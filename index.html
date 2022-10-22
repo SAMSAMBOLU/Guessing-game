@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: block;
+        }
+        #hth, #h{
+            background-color: rgb(98, 228, 228);
+            color: white;
+            font-size: 16px;
+        }
+        input{
+            height: 50px;
+            width: 200px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+            border-radius: 5px;
+            border: none;
+            color: black;
+            background-color: green;
+            margin: 20px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .side1{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(145, 38, 38);
+            margin-top: 5px;
+            position: fixed;
+            border-radius: 0px 200px 200px 0px;
+        }
+        .side3{
+            position: fixed;
+            right: 0px;
+            bottom: 200px;
+            height: 100px;
+            width: 200px;
+            background-color: rgb(145, 38, 38);
+            margin-top: 5px;
+            border-radius: 200px 0px 0px 200px;
+        }
+        .side4{
+            position: fixed;
+            right: 0px;
+            bottom: 95px;
+            height: 100px;
+            width: 100px;
+            background-color: rgb(145, 38, 38);
+            margin-top: 5px;
+            border-radius: 200px 0px 0px 200px;
+        }
+        marquee{
+            height: 40px;
+            color: white;
+            background-color: rgb(145, 38, 38);
+            font-size: 30px;
+            font-weight: 700;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: fixed;
+            bottom: 0px;
+            width: 100vw;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body style="background-color: rgb(15, 15, 15)"> 
+    <section>
+        <h1 style="text-align: center; color: white; font-size: 50px; font-family: Arial, Helvetica, sans-serif;">Guessing Game</h1>
+        <div style="text-align: center;" >
+            <input type="alphanumeric" name="" id="input1" placeholder="Enter a Guess" > <br>
+            <button onclick="check()">check</button>
+            <div id="hth" style="border: 1px solid black; color: black;height: 40px;margin-top: 20px;width: 200px;margin-left: auto;margin-right: auto;"></div>
+            <div id="h" style="border: 1px solid black; color: black;height: 40px;margin-top: 20px;width: 200px;margin-left: auto;margin-right: auto;"></div>
+            <p id="p"></p>
+    
+        </div>
+    </section>
+        <div class="side1">
+
+        </div>
+    
+    <div class="side3">
+
+    </div>
+    <div class="side4">
+
+    </div>
+    <marquee behavior="" direction=""> PROUDLY designed by SAM SAM and THEO. thanks for visiting.!!!</marquee>
+    <script>
+        let x=Math.random()*100
+      
+        let input = document.getElementById('input1')
+        let screen = document.getElementById('h')
+        let paragraph=document.getElementById('p')
+        let guess = document.getElementById('hth')
+        console.log(x)
+     
+      function check() {
+        clear();
+        guess.innerText = "the computer generated" +" " +  Math.round(x) 
+        screen.innerText = input.value
+       
+        if (input.value ==  Math.round(x) ) {
+            paragraph.innerHTML = 'correct!'
+            paragraph.style.color = "green"
+            paragraph.style.fontSize = "50px"
+            console.log("correct") 
+        } else {
+            paragraph.innerHTML='Incorrect!' 
+            paragraph.style.color = "red"
+            console.log("incorrect") 
+            paragraph.style.fontSize = "50px"
+            
+        }
+        return;
+      
+      }
+      function clear(){
+        paragraph.innerHTML="" 
+        guess.innerText = ""
+        screen.innerText = ""
+      }
+      
+    </script>
+</body>
+</html>"
